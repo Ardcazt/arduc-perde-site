@@ -1,0 +1,94 @@
+========================================
+  NETLIFY'E SADECE SÜRÜKLEYİP BIRAKMA
+  (Git / GitHub YOK – En kolay yöntem)
+========================================
+
+Sadece 4 adım:
+
+----------------------------------------
+ADIM 1: Netlify hesabı aç
+----------------------------------------
+
+1. Tarayıcıda şu adresi aç: https://app.netlify.com
+
+2. "Sign up" veya "Log in" yazıyorsa tıkla.
+
+3. E-posta ile kayıt olabilirsin (GitHub şart değil).
+   Veya "Sign up with Google" / "Sign up with Email" seç.
+
+4. Kayıt olup giriş yaptıktan sonra Netlify ana sayfasına düşeceksin.
+
+
+----------------------------------------
+ADIM 2: Site klasörünü ZIP'le
+----------------------------------------
+
+1. Bilgisayarında şu klasöre git:
+   C:\Users\mmuca\arduc-perde-site
+
+2. Bu klasörün İÇİNE gir. Ekranda şunlar görünmeli:
+   index.html, perde.html, kurumsal.html, iletisim.html, assets klasörü, admin klasörü, data klasörü vb.
+   (arduc-perde-site klasörünün kendisini ZIP'leme; İÇİNDEKİLERİ zip'leyeceğiz.)
+
+3. İçerideki TÜM dosya ve klasörleri seç:
+   Ctrl + A (hepsini seç).
+
+4. Seçili haldeyken SAĞ TIKLA → "Sıkıştırılmış (zip) klasör gönder" veya "Compress to Zip file" de.
+
+5. Zip oluşacak; adı "arduc-perde-site.zip" veya "sıkıştırılmış klasör" gibi bir şey olabilir. Önemli değil.
+
+6. Bu zip dosyasının yerini not al (genelde arduc-perde-site klasörünün içinde veya bir üst klasörde oluşur).
+
+
+----------------------------------------
+ADIM 3: Netlify'de "Deploy manually"
+----------------------------------------
+
+1. Netlify sitesinde (app.netlify.com) giriş yaptıktan sonra ana sayfadasın.
+
+2. Sayfada büyük bir alan göreceksin. Üzerinde şuna benzer bir yazı var:
+   "Want to deploy a new site without connecting to Git? Drag and drop your site output folder here"
+   veya
+   "Sites" sekmesindeyken "Add new site" → "Deploy manually" seçeneği.
+
+3. "Add new site" butonuna tıkla → Açılan menüden "Deploy manually" veya "Drag and drop" ile ilgili seçeneği bul.
+
+4. "Deploy manually" seçildiğinde büyük bir kutu çıkar: "Drag and drop your site output folder here" veya benzeri.
+
+5. Az önce yaptığın ZIP dosyasını (arduc-perde-site.zip) bu kutuya SÜRÜKLEYIP BIRAK.
+
+   (ZIP'ı masaüstünden veya klasörden tutup Netlify sayfasındaki kutuya bırak.)
+
+6. Yükleme bitene kadar bekle (birkaç saniye – "Site is live" gibi yazı çıkacak).
+
+
+----------------------------------------
+ADIM 4: Site adresini al
+----------------------------------------
+
+1. Yükleme bitince Netlify sana bir link verecek. Örneğin:
+   https://xxxxx-12345.netlify.app
+
+2. Bu linke tıklayınca siten açılır. Bunu müşterilerine / arkadaşlarına verebilirsin.
+
+3. (İsteğe bağlı) Daha güzel isim vermek için:
+   - Netlify'de sitene tıkla
+   - "Domain settings" veya "Site configuration" → "Change site name"
+   - Örneğin: arduc-perde yaz → adres şöyle olur: https://arduc-perde.netlify.app
+
+
+========================================
+ÖNEMLİ NOTLAR
+========================================
+
+- Bu yöntemde GitHub yok. İleride bir şeyi değiştirirsen (metin, telefon vb.) 
+  bilgisayarındaki klasörde değiştirip yeniden ZIP'leyip Netlify'a tekrar 
+  sürükleyip bırakırsın (eski sürümün üzerine yazar).
+
+- İletişim formu Netlify'de çalışır. Gelen mesajları görmek için:
+  Netlify → Siten → "Forms" sekmesi.
+
+- Takıldığın yerde hangi adımda kaldığını yaz (1, 2, 3 veya 4); oradan 
+  adım adım yardım edebilirim.
+
+========================================

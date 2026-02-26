@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>İletişim | Arduç Perde</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="assets/js/site-icerik.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-left">
+      <a href="index.html" class="topbar-link">Sipariş Takibi</a>
+      <a href="index.html#kampanyalar" class="topbar-link">Kampanyalar</a>
+      <a href="iletisim.html" class="topbar-link">Mağazalarımız</a>
+    </div>
+    <div class="topbar-right">
+      <span class="topbar-banner">Arduç Perde · Her anın keyfini yakala</span>
+    </div>
+  </header>
+
+  <header class="main-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">
+        <div class="brand-logo">
+          <img src="assets/img/logo.png" alt="Arduç Perde logosu">
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">Arduç Perde</span>
+          <span class="brand-tagline">Her anın keyfini yakala</span>
+        </div>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link">Ana Sayfa</a>
+        <a href="perde.html" class="nav-link">Perde</a>
+        <a href="kurumsal.html" class="nav-link">Kurumsal</a>
+        <a href="iletisim.html" class="nav-link active">İletişim</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="breadcrumb">
+    <div class="container breadcrumb-inner">
+      <a href="index.html">Anasayfa</a>
+      <span>›</span>
+      <span>İletişim</span>
+    </div>
+  </div>
+
+  <main class="contact-layout">
+    <div class="container contact-inner">
+      <section class="contact-card">
+        <h1>Bize Ulaşın</h1>
+        <p>Perde modellerimiz, ölçü alma hizmeti veya siparişlerinizle ilgili her türlü sorunuz için bizimle iletişime geçebilirsiniz.</p>
+
+        <div class="contact-details">
+          <div>
+            <div class="contact-detail-label">Adres</div>
+            <div>Osmangazi, Hilal Cd. 12 a, 34000 Sancaktepe/İstanbul</div>
+          </div>
+          <div>
+            <div class="contact-detail-label">Telefon</div>
+            <div><a href="tel:+905446593436">+90 544 659 34 36</a></div>
+          </div>
+          <div>
+            <div class="contact-detail-label">WhatsApp</div>
+            <div><a href="https://wa.me/905446593436" target="_blank" rel="noopener">WhatsApp hattımıza yazın</a></div>
+          </div>
+          <div>
+            <div class="contact-detail-label">E-posta</div>
+            <div><a href="mailto:Erenarducc@gmail.com">Erenarducc@gmail.com</a></div>
+          </div>
+          <div>
+            <div class="contact-detail-label">Çalışma Saatleri</div>
+            <div>Hafta içi 09:00 – 19:00, Cumartesi 10:00 – 18:00</div>
+          </div>
+        </div>
+
+        <div class="contact-actions">
+          <a class="btn btn-primary" href="https://wa.me/905446593436" target="_blank" rel="noopener">WhatsApp ile yaz</a>
+          <a class="btn btn-outline" href="tel:+905446593436">Telefon et</a>
+        </div>
+      </section>
+
+      <section class="contact-card">
+        <h2>İletişim Formu</h2>
+        <p class="form-help">Bu form Netlify Forms ile çalışacak şekilde hazırlandı. Site Netlify’ye bağlandığında gönderimler panelden görüntülenebilir.</p>
+
+        <form name="iletisim" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="iletisim">
+          <p style="display:none">
+            <label>Bot alanı: <input name="bot-field"></label>
+          </p>
+
+          <div class="form-row">
+            <div>
+              <label for="ad">Ad Soyad</label>
+              <input id="ad" name="ad" type="text" required>
+            </div>
+            <div>
+              <label for="telefon">Telefon</label>
+              <input id="telefon" name="telefon" type="tel" required>
+            </div>
+          </div>
+
+          <label for="email">E-posta</label>
+          <input id="email" name="email" type="email">
+
+          <label for="konu">Konu</label>
+          <select id="konu" name="konu">
+            <option value="genel">Genel bilgi talebi</option>
+            <option value="perde-teklifi">Perde ölçü & fiyat teklifi</option>
+            <option value="servis">Servis / montaj</option>
+          </select>
+
+          <label for="mesaj">Mesajınız</label>
+          <textarea id="mesaj" name="mesaj" required></textarea>
+
+          <button type="submit" class="btn btn-primary btn-full">Gönder</button>
+        </form>
+      </section>
+    </div>
+
+    <section id="sss" class="container faq-section">
+      <h2>Sık Sorulan Sorular</h2>
+      <div class="faq-grid">
+        <article class="card faq-item">
+          <h3>Ölçü alma hizmetiniz ücretli mi?</h3>
+          <p>Mağazamızın belirlediği bölgelere ücretsiz keşif ve ölçü hizmeti sunabilirsiniz. Detaylar için telefonla bilgi verilecektir.</p>
+        </article>
+        <article class="card faq-item">
+          <h3>Teslimat süreniz nedir?</h3>
+          <p>Seçilen modele ve kumaşa göre değişmekle birlikte, ortalama teslimat süresi 7–14 gün arasındadır.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h4>Kurumsal</h4>
+        <ul>
+          <li><a href="kurumsal.html">Hakkımızda</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Müşteri Hizmetleri</h4>
+        <ul>
+          <li><a href="iletisim.html">İletişim</a></li>
+          <li><a href="#sss">Sık Sorulan Sorular</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Site Hakkında</h4>
+        <ul>
+          <li><a href="index.html#kampanyalar">Kampanyalar</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Popüler Kategoriler</h4>
+        <ul>
+          <li><a href="perde.html#tul">Tül Perdeler</a></li>
+          <li><a href="perde.html#fon">Fon Perdeler</a></li>
+          <li><a href="perde.html#stor">Stor & Zebra Perdeler</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <span>© <span id="year"></span> Arduç Perde</span>
+        <span>Her anın keyfini yakala</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+

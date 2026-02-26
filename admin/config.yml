@@ -1,0 +1,54 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+site_url: "https://arduc-perde.netlify.app"
+display_url: "https://arduc-perde.netlify.app"
+
+collections:
+  - name: "products"
+    label: "Perdeler"
+    label_singular: "Perde"
+    folder: "data"
+    extension: "json"
+    format: "json"
+    create: true
+    slug: "{{slug}}"
+    filter:
+      field: "type"
+      value: "tul"
+    fields:
+      - { name: "id", label: "ID", widget: "string" }
+      - { name: "name", label: "Ürün Adı", widget: "string" }
+      - { name: "type", label: "Tip (tul/fon/stor)", widget: "select", options: ["tul", "fon", "stor"] }
+      - { name: "description", label: "Açıklama", widget: "text" }
+      - { name: "color", label: "Renk", widget: "select", options: ["beyaz", "ekru", "gri", "renkli"] }
+      - { name: "width_cm", label: "Genişlik (cm)", widget: "number" }
+      - { name: "height_cm", label: "Yükseklik (cm)", widget: "number" }
+      - { name: "price_try", label: "Fiyat (TL)", widget: "number" }
+      - { name: "tag", label: "Etiket (oda vb.)", widget: "string", required: false }
+      - { name: "image", label: "Görsel", widget: "image", required: false }
+
+  - name: "pages"
+    label: "Sayfalar"
+    files:
+      - file: "content/kurumsal.md"
+        label: "Kurumsal"
+        name: "kurumsal"
+        fields:
+          - { name: "title", label: "Başlık", widget: "string", default: "Arduç Perde" }
+          - { name: "body", label: "İçerik", widget: "markdown" }
+      - file: "content/iletisim.md"
+        label: "İletişim Bilgileri"
+        name: "iletisim"
+        fields:
+          - { name: "title", label: "Başlık", widget: "string", default: "İletişim" }
+          - { name: "address", label: "Adres", widget: "text" }
+          - { name: "phone", label: "Telefon", widget: "string" }
+          - { name: "whatsapp", label: "WhatsApp", widget: "string", required: false }
+          - { name: "email", label: "E-posta", widget: "string", required: false }
+          - { name: "hours", label: "Çalışma Saatleri", widget: "string", required: false }
+

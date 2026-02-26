@@ -1,0 +1,24 @@
+{
+  "iletisim": {
+    "adres": "Osmangazi, Hilal Cd. 12 a, 34000 Sancaktepe/İstanbul",
+    "telefon": "+90 544 659 34 36",
+    "telefon_link": "+905446593436",
+    "whatsapp_link": "905446593436",
+    "email": "Erenarducc@gmail.com",
+    "calisma_saatleri": "Hafta içi 09:00 – 19:00, Cumartesi 10:00 – 18:00"
+  },
+  "kurumsal": {
+    "baslik": "Arduç Perde",
+    "giris": "Arduç Perde, perde seçiminde konforu ve estetiği bir araya getirmek isteyenler için kurulmuş bir perde mağazasıdır. Mağazamızda salon, oturma odası, yatak odası ve çocuk odalarınıza uygun geniş bir ürün yelpazesi sunuyoruz.",
+    "paragraf2": "Her projemizde, mekânın ölçülerini, ışık ihtiyacını ve dekorasyon tarzını birlikte değerlendirerek size en uygun tül, fon, stor ve zebra perde çözümlerini öneriyoruz.",
+    "hizmetler_baslik": "Hizmetlerimiz",
+    "hizmetler": [
+      "Yerinde keşif ve ölçü alma",
+      "Perde modeli ve kumaş danışmanlığı",
+      "Montaj ve sonrası destek",
+      "Projeli çalışmalar (ofis, otel, kafe vb.)"
+    ],
+    "vizyon_baslik": "Vizyonumuz",
+    "vizyon_metin": "Her anın keyfini yakalayabileceğiniz, sıcak ve konforlu yaşam alanları oluşturmanıza yardımcı olmak."
+  }
+}

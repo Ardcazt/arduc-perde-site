@@ -1,0 +1,52 @@
+========================================
+  ARDUÇ PERDE SİTESİ - LOGO EKLEME
+========================================
+
+Logo dosyanız Cursor tarafından şu yola kaydedildi. Bunu kopyalayacağız:
+
+   KAYNAK (logo burada):
+   C:\Users\mmuca\.cursor\projects\C-Users-mmuca-AppData-Local-Temp-a1fbda05-0670-4f78-9e74-216d24408853\assets\c__Users_mmuca_AppData_Roaming_Cursor_User_workspaceStorage_1771423766087_images_logo.png-fb1a957d-5376-4b18-bc12-52052f8abc20.png
+
+   HEDEF (buraya logo.png olarak koyun):
+   C:\Users\mmuca\arduc-perde-site\assets\img\logo.png
+
+--- YÖNTEM 1: Kopyala – Yapıştır (en kolay) ---
+
+1. Windows’ta Dosya Gezgini’ni açın.
+
+2. Üstteki adres çubuğuna KAYNAK yolunu yapıştırıp Enter’a basın.
+   (Logo dosyası görünecek.)
+
+3. "logo.png-fb1a957d-..." dosyasına SAĞ TIKLAYIP "Kopyala" deyin.
+
+4. Adres çubuğuna HEDEF klasörünü yazıp Enter’a basın:
+   C:\Users\mmuca\arduc-perde-site\assets\img
+
+5. Boş bir yere SAĞ TIKLAYIP "Yapıştır" deyin.
+
+6. Yapışan dosyaya SAĞ TIKLAYIP "Yeniden adlandir" deyin; adını
+   logo.png yapın (tam bu şekilde).
+
+--- YÖNTEM 2: Kopyala-yapıştır ile ---
+
+1. Logo dosyasını (WhatsApp_Image_2026-02-21_at_22.35.10... .png)
+   herhangi bir programda açın (resim görüntüleyici, Paint vb.).
+
+2. "Farklı Kaydet" veya "Dosya → Farklı Kaydet" deyin.
+
+3. Kayıt yeri olarak şunu seçin:
+   C:\Users\mmuca\arduc-perde-site\assets\img
+
+4. Dosya adı: logo.png yazın.
+
+5. Kaydedin.
+
+--- KONTROL ---
+
+Şu dosya var mı kontrol edin:
+C:\Users\mmuca\arduc-perde-site\assets\img\logo.png
+
+Varsa sitede tüm sayfalarda logo görünecektir. Tarayıcıda index.html
+açarak test edebilirsiniz.
+
+========================================

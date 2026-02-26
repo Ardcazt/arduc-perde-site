@@ -1,0 +1,12 @@
+# Arduç Perde - Netlify ayarları
+# Git ile yayınlarsanız bu ayarlar otomatik kullanılır.
+
+[build]
+  publish = "."
+  command = ""
+
+# İsteğe bağlı: 404 sayfası
+# [[redirects]]
+#   from = "/*"
+#   to = "/index.html"
+#   status = 200

@@ -1,0 +1,20 @@
+========================================
+  SİTE İÇERİĞİNİ DEĞİŞTİRMEK İÇİN
+========================================
+
+Bu klasördeki "site-icerik.json" dosyasını açın (Not Defteri veya benzeri).
+
+SADECE tırnak içindeki yazıları değiştirin.
+Örnek: "telefon": "+90 544 659 34 36"
+        Buradaki numarayı kendi numaranızla değiştirin.
+
+Aynı dosyada şunları düzenleyebilirsiniz:
+- Adres, telefon, WhatsApp, e-posta, çalışma saatleri
+- Kurumsal sayfadaki metinler (hakkımızda, hizmetler, vizyon)
+
+Değişiklikten sonra:
+1. Dosyayı kaydedin.
+2. Tüm site klasörünü (arduc-perde-site içindekiler) zipleyin.
+3. Netlify.com → Siteniz → Deploys → ZIP dosyasını sürükleyip bırakın.
+
+Detaylı anlatım için ana klasördeki MUSTERI_TESLIM_REHBERI.md dosyasına bakın.

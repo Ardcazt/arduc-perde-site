@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arduç Perde | Her anın keyfini yakala</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-left">
+      <a href="index.html" class="topbar-link">Sipariş Takibi</a>
+      <a href="#kampanyalar" class="topbar-link">Kampanyalar</a>
+      <a href="iletisim.html" class="topbar-link">Mağazalarımız</a>
+    </div>
+    <div class="topbar-right">
+      <span class="topbar-banner">Arduç Perde · Her anın keyfini yakala</span>
+    </div>
+  </header>
+
+  <header class="main-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">
+        <div class="brand-logo">
+          <!-- Kullanıcı logo görselini assets/img/logo.png olarak eklemeli -->
+          <img src="assets/img/logo.png" alt="Arduç Perde logosu">
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">Arduç Perde</span>
+          <span class="brand-tagline">Her anın keyfini yakala</span>
+        </div>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html" class="nav-link active">Ana Sayfa</a>
+        <a href="perde.html" class="nav-link">Perde</a>
+        <a href="kurumsal.html" class="nav-link">Kurumsal</a>
+        <a href="iletisim.html" class="nav-link">İletişim</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <h1>Her mekâna özel perde çözümleri</h1>
+          <p>Arduç Perde ile salonunuzdan yatak odanıza, her odada şıklık ve konforu bir arada yaşayın.</p>
+          <div class="hero-actions">
+            <a href="perde.html" class="btn btn-primary">Perde Koleksiyonunu İncele</a>
+            <a href="iletisim.html" class="btn btn-outline">Randevu Oluştur</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <div class="hero-image-placeholder">
+            Perde vitrini görseli alanı
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="kampanyalar" class="section section-light">
+      <div class="container">
+        <h2>Öne Çıkan Kampanyalar</h2>
+        <div class="grid-3">
+          <article class="card">
+            <h3>Yeni Sezon Salon Perdeleri</h3>
+            <p>Belirli salon perde modellerinde sezon açılışına özel indirimler.</p>
+          </article>
+          <article class="card">
+            <h3>Yatak Odası Paketleri</h3>
+            <p>Güneşlik + fon perde kombinlerinde avantajlı paket fiyatları.</p>
+          </article>
+          <article class="card">
+            <h3>Mağazadan Ölçü Hizmeti</h3>
+            <p>Mağazamıza uğrayarak ücretsiz ölçü ve keşif talep edebilirsiniz.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>Perde Kategorilerimiz</h2>
+        <div class="grid-3">
+          <a href="perde.html#tul" class="card card-link">
+            <h3>Tül Perdeler</h3>
+            <p>Işığı yumuşatan, ferah ve zarif tül perde seçenekleri.</p>
+          </a>
+          <a href="perde.html#fon" class="card card-link">
+            <h3>Fon Perdeler</h3>
+            <p>Renk ve doku seçenekleri ile dekorasyonunuzu tamamlayan fon perdeler.</p>
+          </a>
+          <a href="perde.html#stor" class="card card-link">
+            <h3>Stor & Zebra Perdeler</h3>
+            <p>Modern ve pratik kullanım sunan stor ve zebra perde çözümleri.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h4>Kurumsal</h4>
+        <ul>
+          <li><a href="kurumsal.html">Hakkımızda</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Müşteri Hizmetleri</h4>
+        <ul>
+          <li><a href="iletisim.html">İletişim</a></li>
+          <li><a href="iletisim.html#sss">Sık Sorulan Sorular</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Site Hakkında</h4>
+        <ul>
+          <li><a href="#kampanyalar">Kampanyalar</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Popüler Kategoriler</h4>
+        <ul>
+          <li><a href="perde.html#tul">Tül Perdeler</a></li>
+          <li><a href="perde.html#fon">Fon Perdeler</a></li>
+          <li><a href="perde.html#stor">Stor & Zebra Perdeler</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <span>© <span id="year"></span> Arduç Perde</span>
+        <span>Her anın keyfini yakala</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+

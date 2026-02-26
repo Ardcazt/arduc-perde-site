@@ -1,0 +1,75 @@
+[
+  {
+    "id": "tul-1",
+    "name": "Lina İnce Tül Perde",
+    "type": "tul",
+    "description": "Salon ve oturma odaları için hafif dokulu, dalgalı desenli ince tül perde.",
+    "color": "beyaz",
+    "width_cm": 300,
+    "height_cm": 260,
+    "price_try": 1650,
+    "tag": "salon",
+    "image": ""
+  },
+  {
+    "id": "tul-2",
+    "name": "Saten Şeritli Tül Perde",
+    "type": "tul",
+    "description": "Modern saten şerit detaylı, ışığı yumuşak geçiren tül perde.",
+    "color": "ekru",
+    "width_cm": 300,
+    "height_cm": 260,
+    "price_try": 1890,
+    "tag": "yatak-odasi",
+    "image": ""
+  },
+  {
+    "id": "fon-1",
+    "name": "Soft Kadife Fon Perde",
+    "type": "fon",
+    "description": "Işığı büyük oranda kesen, yumuşak dokulu kadife fon perde.",
+    "color": "gri",
+    "width_cm": 150,
+    "height_cm": 260,
+    "price_try": 2100,
+    "tag": "salon",
+    "image": ""
+  },
+  {
+    "id": "fon-2",
+    "name": "Düz Keten Fon Perde",
+    "type": "fon",
+    "description": "Doğal keten dokulu, sade ve şık fon perde.",
+    "color": "renkli",
+    "width_cm": 150,
+    "height_cm": 260,
+    "price_try": 1950,
+    "tag": "mutfak",
+    "image": ""
+  },
+  {
+    "id": "stor-1",
+    "name": "Basic Stor Perde",
+    "type": "stor",
+    "description": "Ofis ve mutfaklar için kolay temizlenebilir basic stor perde.",
+    "color": "beyaz",
+    "width_cm": 120,
+    "height_cm": 200,
+    "price_try": 850,
+    "tag": "ofis",
+    "image": ""
+  },
+  {
+    "id": "stor-2",
+    "name": "Çift Mekanizmalı Zebra Perde",
+    "type": "stor",
+    "description": "Işık kontrolünü kolaylaştıran çift mekanizmalı zebra perde.",
+    "color": "gri",
+    "width_cm": 140,
+    "height_cm": 220,
+    "price_try": 1290,
+    "tag": "cocuk-odasi",
+    "image": ""
+  }
+]
+
