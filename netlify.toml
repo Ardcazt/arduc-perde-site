@@ -5,6 +5,10 @@
   publish = "."
   command = "npm install && npm run build"
 
+[build.environment]
+  NODE_VERSION = "18"
+  NPM_FLAGS = "--legacy-peer-deps"
+
 # İsteğe bağlı: 404 sayfası
 # [[redirects]]
 #   from = "/*"
