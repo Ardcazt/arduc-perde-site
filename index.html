@@ -3,143 +3,251 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Arduç Perde | Her anın keyfini yakala</title>
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <title>Arduç Perde Çeyiz | Işığı Tasarla, Mekâna Ruh Kat</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/tailwind.css">
+  <style>
+    .font-lora { font-family: 'Lora', serif; }
+    .font-inter { font-family: 'Inter', sans-serif; }
+    .font-heading { font-family: 'Lora', serif; }
+    
+    /* Hero dışında bej zemin */
+    body { background-color: #F4EFDF; position: relative; }
+    
+    /* Metalik bronz / altın metin (isteğe bağlı) */
+    .text-metallic {
+      background: linear-gradient(165deg, #d4af6a 0%, #b89552 25%, #8B6D4C 50%, #6d5340 75%, #8B6D4C 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    }
+    
+    #navbar.scrolled {
+      background: rgba(244, 239, 223, 0.95);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    }
+    .hero-section { position: relative; z-index: 1; }
+    @media (max-width: 768px) {
+      #main-nav.mobile-open { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: rgba(244,239,223,0.98); backdrop-filter: blur(10px); padding: 1rem; gap: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+      #main-nav.mobile-open a { color: #1E293B; padding: 0.75rem 1rem; border-bottom: 1px solid rgba(0,0,0,0.06); }
+    }
+  </style>
 </head>
-<body>
-  <header class="topbar">
-    <div class="topbar-left">
-      <a href="index.html" class="topbar-link">Sipariş Takibi</a>
-      <a href="#kampanyalar" class="topbar-link">Kampanyalar</a>
-      <a href="iletisim.html" class="topbar-link">Mağazalarımız</a>
-    </div>
-    <div class="topbar-right">
-      <span class="topbar-banner">Arduç Perde · Her anın keyfini yakala</span>
-    </div>
-  </header>
+<body class="font-inter text-arduc-anthracite antialiased">
 
-  <header class="main-header">
-    <div class="container header-inner">
-      <a href="index.html" class="brand">
-        <div class="brand-logo">
-          <!-- Kullanıcı logo görselini assets/img/logo.png olarak eklemeli -->
-          <img src="assets/img/logo.png" alt="Arduç Perde logosu">
+  <!-- Üst yardımcı çubuk + Navbar -->
+  <header class="fixed top-0 left-0 right-0 z-50">
+    <div class="bg-gray-100/90 border-b border-black/5">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-1.5 flex items-center justify-between">
+        <a href="iletisim.html" class="inline-flex items-center gap-1.5 text-arduc-anthracite/70 hover:text-arduc-anthracite text-xs font-medium transition-colors">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
+          Sipariş Takibi
+        </a>
+        <div class="flex items-center gap-1 sm:gap-2">
+          <a href="#" class="w-8 h-8 rounded flex items-center justify-center text-arduc-anthracite/70 hover:text-arduc-anthracite transition-colors" aria-label="Dil">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg>
+          </a>
+          <a href="https://www.instagram.com" target="_blank" rel="noopener" class="w-8 h-8 rounded flex items-center justify-center text-arduc-anthracite/70 hover:text-arduc-anthracite transition-colors" aria-label="Instagram">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+          <a href="iletisim.html" class="w-8 h-8 rounded flex items-center justify-center text-arduc-anthracite/70 hover:text-arduc-anthracite transition-colors" aria-label="Hesabım">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+          </a>
         </div>
-        <div class="brand-text">
-          <span class="brand-name">Arduç Perde</span>
-          <span class="brand-tagline">Her anın keyfini yakala</span>
+      </div>
+    </div>
+    <div id="navbar" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 h-20 flex items-center justify-between border-b border-black/5 bg-[#F4EFDF]/90 backdrop-blur-md shadow-sm transition-all duration-300">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-lg border border-arduc-coffee/60 flex items-center justify-center flex-shrink-0 bg-[#F4EFDF] overflow-hidden shadow-sm">
+          <img src="assets/img/logo-nav.png" alt="Arduç Perde Çeyiz" class="w-full h-full object-contain p-0.5" />
+        </div>
+        <div class="flex flex-col">
+          <span class="font-lora text-arduc-anthracite text-lg font-semibold leading-tight">Arduç Perde Çeyiz</span>
+          <span class="text-arduc-anthracite/60 text-xs font-light tracking-wide mt-0.5">Evinizin Yeni Manzarası</span>
         </div>
       </a>
-      <nav class="main-nav">
-        <a href="index.html" class="nav-link active">Ana Sayfa</a>
-        <a href="perde.html" class="nav-link">Perde</a>
-        <a href="kurumsal.html" class="nav-link">Kurumsal</a>
-        <a href="iletisim.html" class="nav-link">İletişim</a>
+      
+      <nav id="main-nav" class="hidden md:flex items-center gap-8">
+        <a href="index.html" class="border-b-2 border-black/90 text-arduc-anthracite text-sm font-medium tracking-wide transition-colors">Ana Sayfa</a>
+        <a href="perde.html" class="text-arduc-anthracite/80 hover:text-black text-sm font-medium tracking-wide transition-colors">Koleksiyon</a>
+        <a href="kurumsal.html" class="text-arduc-anthracite/80 hover:text-black text-sm font-medium tracking-wide transition-colors">Kurumsal</a>
+        <a href="iletisim.html" class="text-arduc-anthracite/80 hover:text-black text-sm font-medium tracking-wide transition-colors">İletişim</a>
       </nav>
+      
+      <button id="menu-toggle" type="button" class="md:hidden w-10 h-10 flex items-center justify-center text-arduc-anthracite rounded-lg hover:bg-black/5" aria-label="Menüyü aç">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+      
+      <div class="hidden md:block">
+        <a href="iletisim.html" class="inline-flex items-center px-6 py-2.5 rounded-lg bg-arduc-sage text-white text-sm font-medium shadow-sm hover:bg-arduc-sage/90 transition-all duration-300">
+          Ölçü Randevusu Al
+        </a>
+      </div>
     </div>
   </header>
 
-  <main>
-    <section class="hero">
-      <div class="container hero-inner">
-        <div class="hero-text">
-          <h1>Her mekâna özel perde çözümleri</h1>
-          <p>Arduç Perde ile salonunuzdan yatak odanıza, her odada şıklık ve konforu bir arada yaşayın.</p>
-          <div class="hero-actions">
-            <a href="perde.html" class="btn btn-primary">Perde Koleksiyonunu İncele</a>
-            <a href="iletisim.html" class="btn btn-outline">Randevu Oluştur</a>
-          </div>
+  <section class="hero-section relative min-h-screen flex items-center justify-center px-4 pt-24 pb-20 bg-arduc-anthracite/20" style="background-image: url('assets/img/hero-bg.png'); background-size: cover; background-position: center;">
+    <div class="w-full max-w-lg mx-auto">
+      <!-- Ortada bej kart: başlık + logo + buton -->
+      <div class="rounded-2xl bg-[#F4EFDF]/90 backdrop-blur-sm shadow-xl border border-white/30 overflow-hidden p-8 sm:p-10 flex flex-col items-center text-center">
+        <h1 class="font-lora text-2xl sm:text-3xl md:text-4xl font-medium text-arduc-anthracite leading-tight mb-6">
+          Işığı Tasarla, Mekâna<br>Ruh Kat
+        </h1>
+        <div class="mb-8">
+          <img src="assets/img/logo.png" alt="Arduç Perde Çeyiz" class="w-36 h-36 sm:w-44 sm:h-44 mx-auto object-contain" />
         </div>
-        <div class="hero-image">
-          <div class="hero-image-placeholder">
-            Perde vitrini görseli alanı
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="kampanyalar" class="section section-light">
-      <div class="container">
-        <h2>Öne Çıkan Kampanyalar</h2>
-        <div class="grid-3">
-          <article class="card">
-            <h3>Yeni Sezon Salon Perdeleri</h3>
-            <p>Belirli salon perde modellerinde sezon açılışına özel indirimler.</p>
-          </article>
-          <article class="card">
-            <h3>Yatak Odası Paketleri</h3>
-            <p>Güneşlik + fon perde kombinlerinde avantajlı paket fiyatları.</p>
-          </article>
-          <article class="card">
-            <h3>Mağazadan Ölçü Hizmeti</h3>
-            <p>Mağazamıza uğrayarak ücretsiz ölçü ve keşif talep edebilirsiniz.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <h2>Perde Kategorilerimiz</h2>
-        <div class="grid-3">
-          <a href="perde.html#tul" class="card card-link">
-            <h3>Tül Perdeler</h3>
-            <p>Işığı yumuşatan, ferah ve zarif tül perde seçenekleri.</p>
-          </a>
-          <a href="perde.html#fon" class="card card-link">
-            <h3>Fon Perdeler</h3>
-            <p>Renk ve doku seçenekleri ile dekorasyonunuzu tamamlayan fon perdeler.</p>
-          </a>
-          <a href="perde.html#stor" class="card card-link">
-            <h3>Stor & Zebra Perdeler</h3>
-            <p>Modern ve pratik kullanım sunan stor ve zebra perde çözümleri.</p>
-          </a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <h4>Kurumsal</h4>
-        <ul>
-          <li><a href="kurumsal.html">Hakkımızda</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Müşteri Hizmetleri</h4>
-        <ul>
-          <li><a href="iletisim.html">İletişim</a></li>
-          <li><a href="iletisim.html#sss">Sık Sorulan Sorular</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Site Hakkında</h4>
-        <ul>
-          <li><a href="#kampanyalar">Kampanyalar</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Popüler Kategoriler</h4>
-        <ul>
-          <li><a href="perde.html#tul">Tül Perdeler</a></li>
-          <li><a href="perde.html#fon">Fon Perdeler</a></li>
-          <li><a href="perde.html#stor">Stor & Zebra Perdeler</a></li>
-        </ul>
+        <a href="perde.html" class="inline-flex items-center px-8 py-3.5 rounded-lg bg-arduc-coffee text-white text-sm font-medium shadow-md hover:bg-arduc-coffee/90 transition-all duration-300">
+          Koleksiyonu Keşfet
+        </a>
       </div>
     </div>
-    <div class="footer-bottom">
-      <div class="container footer-bottom-inner">
-        <span>© <span id="year"></span> Arduç Perde</span>
-        <span>Her anın keyfini yakala</span>
+  </section>
+
+  <!-- Öne Çıkan Kategoriler -->
+  <section class="py-20 sm:py-28 bg-[#F4EFDF] relative z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-heading text-3xl sm:text-4xl font-light text-arduc-anthracite text-center mb-4">
+        Öne Çıkan Kategoriler
+      </h2>
+      <p class="text-arduc-anthracite/70 text-center max-w-xl mx-auto mb-16 font-light">
+        İhtiyacınıza ve tarzınıza uygun perde ailesini keşfedin.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+        <a href="perde.html#tul" class="group block rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 hover:scale-[1.02] relative">
+          <div class="aspect-[4/5] overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" alt="Tül Perdeler" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+            <div class="absolute inset-0 bg-anthracite-900/40 group-hover:bg-anthracite-900/30 transition-colors"></div>
+          </div>
+          <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+            <h3 class="font-heading text-2xl font-medium mb-1">Tül Perdeler</h3>
+            <p class="text-white/90 text-sm font-light">Işığı yumuşatan, ferah ve zarif seçenekler.</p>
+          </div>
+        </a>
+        <a href="perde.html#fon" class="group block rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 hover:scale-[1.02] relative">
+          <div class="aspect-[4/5] overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=800&q=80" alt="Fon Perdeler" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+            <div class="absolute inset-0 bg-anthracite-900/40 group-hover:bg-anthracite-900/30 transition-colors"></div>
+          </div>
+          <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+            <h3 class="font-heading text-2xl font-medium mb-1">Fon Perdeler</h3>
+            <p class="text-white/90 text-sm font-light">Renk ve doku ile dekorasyonu tamamlayan modeller.</p>
+          </div>
+        </a>
+        <a href="perde.html#stor" class="group block rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 hover:scale-[1.02] relative">
+          <div class="aspect-[4/5] overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=800&q=80" alt="Stor ve Zebra Perdeler" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+            <div class="absolute inset-0 bg-anthracite-900/40 group-hover:bg-anthracite-900/30 transition-colors"></div>
+          </div>
+          <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+            <h3 class="font-heading text-2xl font-medium mb-1">Stor & Zebra Perdeler</h3>
+            <p class="text-white/90 text-sm font-light">Modern ve pratik kullanım.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Neden Biz / Hizmetler -->
+  <section class="py-20 sm:py-28 bg-white/70 relative z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="font-heading text-3xl sm:text-4xl font-light text-arduc-anthracite text-center mb-4">
+        Neden Arduç Perde Çeyiz?
+      </h2>
+      <p class="text-arduc-anthracite/70 text-center max-w-xl mx-auto mb-16 font-light">
+        Güvenle tercih etmeniz için hizmetlerimiz.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
+        <div class="text-center group">
+          <div class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-cream-200 flex items-center justify-center text-arduc-sage group-hover:bg-arduc-sage group-hover:text-white transition-all duration-300">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+          </div>
+          <h3 class="font-heading text-xl font-medium text-arduc-anthracite mb-3">Ücretsiz Ölçü ve Keşif</h3>
+          <p class="text-arduc-anthracite/70 font-light text-sm leading-relaxed">Yerinde keşif ve ölçü alma ile mekânınıza en uygun çözümü birlikte belirliyoruz.</p>
+        </div>
+        <div class="text-center group">
+          <div class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-cream-200 flex items-center justify-center text-arduc-sage group-hover:bg-arduc-sage group-hover:text-white transition-all duration-300">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/></svg>
+          </div>
+          <h3 class="font-heading text-xl font-medium text-arduc-anthracite mb-3">Kişiye Özel Dikim</h3>
+          <p class="text-arduc-anthracite/70 font-light text-sm leading-relaxed">Ölçülerinize ve tercihlerinize göre özel dikim ile mükemmel uyum.</p>
+        </div>
+        <div class="text-center group">
+          <div class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-cream-200 flex items-center justify-center text-arduc-sage group-hover:bg-arduc-sage group-hover:text-white transition-all duration-300">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1h-1m4-1V6a1 1 0 011-1h2a1 1 0 011 1v10a1 1 0 01-1 1h-1m-4-1a1 1 0 001 1h1M9 5a1 1 0 001-1V4a1 1 0 011-1h2a1 1 0 011 1v1a1 1 0 01-1 1H9z"/></svg>
+          </div>
+          <h3 class="font-heading text-xl font-medium text-arduc-anthracite mb-3">Hızlı Teslimat</h3>
+          <p class="text-arduc-anthracite/70 font-light text-sm leading-relaxed">Siparişiniz titizlikle hazırlanır ve zamanında adresinize ulaştırılır.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-anthracite-900 text-white pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+        <div>
+          <h3 class="font-heading text-xl font-medium mb-4">Arduç Perde Çeyiz</h3>
+          <p class="text-white/80 text-sm font-light leading-relaxed">Işığı tasarla, mekâna ruh kat. Kaliteli perde, konforlu yaşam.</p>
+        </div>
+        <div>
+          <h4 class="font-medium text-sm uppercase tracking-wider text-white/90 mb-4">İletişim</h4>
+          <ul class="space-y-2 text-sm text-white/80 font-light">
+            <li>Osmangazi, Hilal Cd. 12 a, 34000 Sancaktepe/İstanbul</li>
+            <li><a href="tel:+905446593436" class="hover:text-white transition-colors">+90 544 659 34 36</a></li>
+            <li><a href="mailto:Erenarducc@gmail.com" class="hover:text-white transition-colors">Erenarducc@gmail.com</a></li>
+            <li>Hafta içi 09:00 – 19:00, Cumartesi 10:00 – 18:00</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-medium text-sm uppercase tracking-wider text-white/90 mb-4">Hızlı Linkler</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="index.html" class="text-white/80 hover:text-white transition-colors">Ana Sayfa</a></li>
+            <li><a href="perde.html" class="text-white/80 hover:text-white transition-colors">Koleksiyon</a></li>
+            <li><a href="kurumsal.html" class="text-white/80 hover:text-white transition-colors">Kurumsal</a></li>
+            <li><a href="iletisim.html" class="text-white/80 hover:text-white transition-colors">İletişim</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-medium text-sm uppercase tracking-wider text-white/90 mb-4">Bizi Takip Edin</h4>
+          <div class="flex gap-4">
+            <a href="https://wa.me/905446593436" target="_blank" rel="noopener" aria-label="WhatsApp" class="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center text-white hover:bg-arduc-sage transition-colors">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            </a>
+            <a href="mailto:Erenarducc@gmail.com" aria-label="E-posta" class="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center text-white hover:bg-arduc-sage transition-colors">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <span class="text-white/60 text-sm">© <span id="year"></span> Arduç Perde Çeyiz. Tüm hakları saklıdır.</span>
+        <span class="text-white/60 text-sm font-light">Evinizin Yeni Manzarası</span>
       </div>
     </div>
   </footer>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+    var navbar = document.getElementById('navbar');
+    function updateNavbar() {
+      navbar.classList.toggle('scrolled', window.scrollY > 60);
+    }
+    window.addEventListener('scroll', updateNavbar);
+    updateNavbar();
+    var menuToggle = document.getElementById('menu-toggle');
+    var mainNav = document.getElementById('main-nav');
+    if (menuToggle && mainNav) {
+      menuToggle.addEventListener('click', function() {
+        mainNav.classList.toggle('mobile-open');
+        menuToggle.setAttribute('aria-label', mainNav.classList.contains('mobile-open') ? 'Menüyü kapat' : 'Menüyü aç');
+      });
+    }
   </script>
 </body>
 </html>
-

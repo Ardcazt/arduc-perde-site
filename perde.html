@@ -3,161 +3,260 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Perde Kataloğu | Arduç Perde</title>
-  <link rel="stylesheet" href="assets/css/styles.css">
-  <script src="assets/js/perde.js" defer></script>
+  <title>Koleksiyon | Arduç Perde Çeyiz</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/tailwind.css">
+  <style>
+    .font-heading { font-family: 'Playfair Display', 'Lora', serif; }
+    .font-body { font-family: 'Montserrat', sans-serif; }
+    #navbar.scrolled { background: rgba(255,255,255,0.94); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+    #navbar.scrolled .nav-brand-text, #navbar.scrolled .nav-brand-tagline, #navbar.scrolled nav a { color: #1a1d28; }
+    #navbar.scrolled nav a:hover { color: #4a5c49; }
+    #navbar.scrolled .cta-btn { background: #4a5c49; color: #fff; border-color: #4a5c49; }
+    #navbar.scrolled .cta-btn:hover { background: #3d4d3c; }
+    .product-card { display: none; }
+    .product-card.visible { display: flex; }
+    @media (max-width: 768px) {
+      #main-nav.mobile-open { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: #fff; padding: 1rem; gap: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+      #main-nav.mobile-open a { color: #2d3142; padding: 0.75rem 1rem; border-bottom: 1px solid rgba(0,0,0,0.06); }
+    }
+  </style>
 </head>
-<body>
-  <header class="topbar">
-    <div class="topbar-left">
-      <a href="index.html" class="topbar-link">Sipariş Takibi</a>
-      <a href="index.html#kampanyalar" class="topbar-link">Kampanyalar</a>
-      <a href="iletisim.html" class="topbar-link">Mağazalarımız</a>
-    </div>
-    <div class="topbar-right">
-      <span class="topbar-banner">Arduç Perde · Her anın keyfini yakala</span>
-    </div>
-  </header>
-
-  <header class="main-header">
-    <div class="container header-inner">
-      <a href="index.html" class="brand">
-        <div class="brand-logo">
-          <img src="assets/img/logo.png" alt="Arduç Perde logosu">
-        </div>
-        <div class="brand-text">
-          <span class="brand-name">Arduç Perde</span>
-          <span class="brand-tagline">Her anın keyfini yakala</span>
-        </div>
-      </a>
-      <nav class="main-nav">
-        <a href="index.html" class="nav-link">Ana Sayfa</a>
-        <a href="perde.html" class="nav-link active">Perde</a>
-        <a href="kurumsal.html" class="nav-link">Kurumsal</a>
-        <a href="iletisim.html" class="nav-link">İletişim</a>
-      </nav>
+<body class="font-body text-anthracite-800 antialiased">
+  <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/75 backdrop-blur-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <a href="index.html" class="flex items-center gap-3">
+          <div class="w-12 h-12 rounded-lg border-2 border-anthracite-800 flex items-center justify-center flex-shrink-0">
+            <span class="font-heading text-anthracite-800 font-semibold text-lg tracking-tight">AD</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="nav-brand-text font-heading text-anthracite-800 text-lg font-semibold leading-tight">Arduç Perde Çeyiz</span>
+            <span class="nav-brand-tagline text-anthracite-800/70 text-xs font-light tracking-wide">Evinizin Yeni Manzarası</span>
+          </div>
+        </a>
+        <nav id="main-nav" class="hidden md:flex items-center gap-8">
+          <a href="index.html" class="text-anthracite-800/90 hover:text-anthracite-800 text-sm font-medium tracking-wide transition-colors">Ana Sayfa</a>
+          <a href="perde.html" class="text-anthracite-800 text-sm font-medium tracking-wide border-b-2 border-sage-600 pb-0.5">Koleksiyon</a>
+          <a href="kurumsal.html" class="text-anthracite-800/90 hover:text-anthracite-800 text-sm font-medium tracking-wide transition-colors">Kurumsal</a>
+          <a href="iletisim.html" class="text-anthracite-800/90 hover:text-anthracite-800 text-sm font-medium tracking-wide transition-colors">İletişim</a>
+        </nav>
+        <button id="menu-toggle" type="button" class="md:hidden w-10 h-10 flex items-center justify-center text-anthracite-800 rounded-lg hover:bg-anthracite-800/5" aria-label="Menüyü aç">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+        <a href="iletisim.html" class="cta-btn inline-flex items-center px-5 py-2.5 rounded-lg bg-sage-600 text-white text-sm font-medium border border-sage-600 hover:bg-sage-700 transition-all duration-300">Ölçü Randevusu Al</a>
+      </div>
     </div>
   </header>
 
-  <div class="breadcrumb">
-    <div class="container breadcrumb-inner">
-      <a href="index.html">Anasayfa</a>
-      <span>›</span>
-      <span>Perde</span>
-    </div>
-  </div>
+  <main class="pt-20">
+    <section class="bg-cream-100 py-16 sm:py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="font-heading text-3xl sm:text-4xl md:text-5xl font-light text-anthracite-800 mb-3">Koleksiyon</h1>
+        <p class="text-anthracite-800/70 font-light max-w-xl mx-auto">Salon, oturma odası, yatak odası ve çocuk odalarınız için tül, fon, stor ve zebra perde seçenekleri.</p>
+      </div>
+    </section>
 
-  <main class="catalog-layout">
-    <div class="container catalog-inner">
-      <aside class="filters">
-        <h3>Filtreler</h3>
+    <section class="py-12 sm:py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="font-heading text-2xl sm:text-3xl font-light text-anthracite-800 text-center mb-10">Öne Çıkan Kategoriler</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+          <a href="#tul" class="filter-trigger group block rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 hover:scale-[1.02] relative" data-type="tul">
+            <div class="aspect-[4/5] overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" alt="Tül Perdeler" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              <div class="absolute inset-0 bg-anthracite-900/40 group-hover:bg-anthracite-900/30 transition-colors"></div>
+            </div>
+            <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+              <h3 class="font-heading text-2xl font-medium mb-1">Tül Perdeler</h3>
+              <p class="text-white/90 text-sm font-light">Işığı yumuşatan, ferah ve zarif seçenekler.</p>
+            </div>
+          </a>
+          <a href="#fon" class="filter-trigger group block rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 hover:scale-[1.02] relative" data-type="fon">
+            <div class="aspect-[4/5] overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=800&q=80" alt="Fon Perdeler" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              <div class="absolute inset-0 bg-anthracite-900/40 group-hover:bg-anthracite-900/30 transition-colors"></div>
+            </div>
+            <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+              <h3 class="font-heading text-2xl font-medium mb-1">Fon Perdeler</h3>
+              <p class="text-white/90 text-sm font-light">Renk ve doku ile dekorasyonu tamamlayan modeller.</p>
+            </div>
+          </a>
+          <a href="#stor" class="filter-trigger group block rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 hover:scale-[1.02] relative" data-type="stor">
+            <div class="aspect-[4/5] overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=800&q=80" alt="Stor ve Zebra Perdeler" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              <div class="absolute inset-0 bg-anthracite-900/40 group-hover:bg-anthracite-900/30 transition-colors"></div>
+            </div>
+            <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+              <h3 class="font-heading text-2xl font-medium mb-1">Stor & Zebra Perdeler</h3>
+              <p class="text-white/90 text-sm font-light">Modern ve pratik kullanım.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
 
-        <div class="filter-group">
-          <div class="filter-group-title">Ürün Tipi</div>
-          <div class="filter-option">
-            <input type="checkbox" id="tip-tul" data-filter-type="type" value="tul" checked>
-            <label for="tip-tul">Tül perde</label>
-          </div>
-          <div class="filter-option">
-            <input type="checkbox" id="tip-fon" data-filter-type="type" value="fon" checked>
-            <label for="tip-fon">Fon perde</label>
-          </div>
-          <div class="filter-option">
-            <input type="checkbox" id="tip-stor" data-filter-type="type" value="stor" checked>
-            <label for="tip-stor">Stor & zebra perde</label>
+    <section class="py-12 sm:py-16 bg-cream-100" id="urunler">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col lg:flex-row gap-8 lg:gap-10">
+          <aside class="lg:w-56 flex-shrink-0">
+            <div class="bg-white rounded-2xl shadow-sm border border-anthracite-800/5 p-5 sticky top-24">
+              <h3 class="font-heading text-lg font-medium text-anthracite-800 mb-4">Filtrele</h3>
+              <div class="space-y-2">
+                <button type="button" class="filter-btn w-full text-left px-4 py-2.5 rounded-xl text-sm font-medium transition-colors bg-sage-600 text-white" data-filter="all">Tümü</button>
+                <button type="button" class="filter-btn w-full text-left px-4 py-2.5 rounded-xl text-sm font-medium transition-colors" data-filter="tul">Tül Perdeler</button>
+                <button type="button" class="filter-btn w-full text-left px-4 py-2.5 rounded-xl text-sm font-medium transition-colors" data-filter="fon">Fon Perdeler</button>
+                <button type="button" class="filter-btn w-full text-left px-4 py-2.5 rounded-xl text-sm font-medium transition-colors" data-filter="stor">Stor & Zebra</button>
+              </div>
+            </div>
+          </aside>
+          <div class="flex-1 min-w-0">
+            <h2 class="font-heading text-2xl font-light text-anthracite-800 mb-6">Perde Modelleri</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6" id="product-grid">
+              <article class="product-card visible flex flex-col rounded-2xl overflow-hidden bg-white shadow-sm border border-anthracite-800/5" data-type="tul">
+                <div class="aspect-[4/3] bg-cream-100">
+                  <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Lina İnce Tül Perde" class="w-full h-full object-cover" />
+                </div>
+                <div class="p-4 flex flex-col flex-1">
+                  <h3 class="font-heading text-lg font-medium text-anthracite-800 mb-1">Lina İnce Tül Perde</h3>
+                  <p class="text-anthracite-800/70 text-sm font-light mb-3 flex-1">Salon ve oturma odaları için hafif dokulu, dalgalı desenli ince tül perde.</p>
+                  <p class="font-medium text-anthracite-800 mb-3">1.650 ₺</p>
+                  <a href="iletisim.html?urun=tul-1" class="inline-flex items-center justify-center px-4 py-2.5 rounded-xl bg-sage-600 text-white text-sm font-medium hover:bg-sage-700 transition-colors">Sipariş İçin İletişime Geç</a>
+                </div>
+              </article>
+              <article class="product-card visible flex flex-col rounded-2xl overflow-hidden bg-white shadow-sm border border-anthracite-800/5" data-type="tul">
+                <div class="aspect-[4/3] bg-cream-100">
+                  <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&q=80" alt="Saten Şeritli Tül Perde" class="w-full h-full object-cover" />
+                </div>
+                <div class="p-4 flex flex-col flex-1">
+                  <h3 class="font-heading text-lg font-medium text-anthracite-800 mb-1">Saten Şeritli Tül Perde</h3>
+                  <p class="text-anthracite-800/70 text-sm font-light mb-3 flex-1">Modern saten şerit detaylı, ışığı yumuşak geçiren tül perde.</p>
+                  <p class="font-medium text-anthracite-800 mb-3">1.890 ₺</p>
+                  <a href="iletisim.html?urun=tul-2" class="inline-flex items-center justify-center px-4 py-2.5 rounded-xl bg-sage-600 text-white text-sm font-medium hover:bg-sage-700 transition-colors">Sipariş İçin İletişime Geç</a>
+                </div>
+              </article>
+              <article class="product-card visible flex flex-col rounded-2xl overflow-hidden bg-white shadow-sm border border-anthracite-800/5" data-type="fon">
+                <div class="aspect-[4/3] bg-cream-100">
+                  <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=600&q=80" alt="Soft Kadife Fon Perde" class="w-full h-full object-cover" />
+                </div>
+                <div class="p-4 flex flex-col flex-1">
+                  <h3 class="font-heading text-lg font-medium text-anthracite-800 mb-1">Soft Kadife Fon Perde</h3>
+                  <p class="text-anthracite-800/70 text-sm font-light mb-3 flex-1">Işığı büyük oranda kesen, yumuşak dokulu kadife fon perde.</p>
+                  <p class="font-medium text-anthracite-800 mb-3">2.100 ₺</p>
+                  <a href="iletisim.html?urun=fon-1" class="inline-flex items-center justify-center px-4 py-2.5 rounded-xl bg-sage-600 text-white text-sm font-medium hover:bg-sage-700 transition-colors">Sipariş İçin İletişime Geç</a>
+                </div>
+              </article>
+              <article class="product-card visible flex flex-col rounded-2xl overflow-hidden bg-white shadow-sm border border-anthracite-800/5" data-type="fon">
+                <div class="aspect-[4/3] bg-cream-100">
+                  <img src="https://images.unsplash.com/photo-1616046229478-9901c5536a45?w=600&q=80" alt="Düz Keten Fon Perde" class="w-full h-full object-cover" />
+                </div>
+                <div class="p-4 flex flex-col flex-1">
+                  <h3 class="font-heading text-lg font-medium text-anthracite-800 mb-1">Düz Keten Fon Perde</h3>
+                  <p class="text-anthracite-800/70 text-sm font-light mb-3 flex-1">Doğal keten dokulu, sade ve şık fon perde.</p>
+                  <p class="font-medium text-anthracite-800 mb-3">1.950 ₺</p>
+                  <a href="iletisim.html?urun=fon-2" class="inline-flex items-center justify-center px-4 py-2.5 rounded-xl bg-sage-600 text-white text-sm font-medium hover:bg-sage-700 transition-colors">Sipariş İçin İletişime Geç</a>
+                </div>
+              </article>
+              <article class="product-card visible flex flex-col rounded-2xl overflow-hidden bg-white shadow-sm border border-anthracite-800/5" data-type="stor">
+                <div class="aspect-[4/3] bg-cream-100">
+                  <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=600&q=80" alt="Basic Stor Perde" class="w-full h-full object-cover" />
+                </div>
+                <div class="p-4 flex flex-col flex-1">
+                  <h3 class="font-heading text-lg font-medium text-anthracite-800 mb-1">Basic Stor Perde</h3>
+                  <p class="text-anthracite-800/70 text-sm font-light mb-3 flex-1">Ofis ve mutfaklar için kolay temizlenebilir basic stor perde.</p>
+                  <p class="font-medium text-anthracite-800 mb-3">850 ₺</p>
+                  <a href="iletisim.html?urun=stor-1" class="inline-flex items-center justify-center px-4 py-2.5 rounded-xl bg-sage-600 text-white text-sm font-medium hover:bg-sage-700 transition-colors">Sipariş İçin İletişime Geç</a>
+                </div>
+              </article>
+              <article class="product-card visible flex flex-col rounded-2xl overflow-hidden bg-white shadow-sm border border-anthracite-800/5" data-type="stor">
+                <div class="aspect-[4/3] bg-cream-100">
+                  <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=600&q=80" alt="Çift Mekanizmalı Zebra Perde" class="w-full h-full object-cover" />
+                </div>
+                <div class="p-4 flex flex-col flex-1">
+                  <h3 class="font-heading text-lg font-medium text-anthracite-800 mb-1">Çift Mekanizmalı Zebra Perde</h3>
+                  <p class="text-anthracite-800/70 text-sm font-light mb-3 flex-1">Işık kontrolünü kolaylaştıran çift mekanizmalı zebra perde.</p>
+                  <p class="font-medium text-anthracite-800 mb-3">1.290 ₺</p>
+                  <a href="iletisim.html?urun=stor-2" class="inline-flex items-center justify-center px-4 py-2.5 rounded-xl bg-sage-600 text-white text-sm font-medium hover:bg-sage-700 transition-colors">Sipariş İçin İletişime Geç</a>
+                </div>
+              </article>
+            </div>
           </div>
         </div>
-
-        <div class="filter-group">
-          <div class="filter-group-title">Renk</div>
-          <select id="filter-color">
-            <option value="">Tümü</option>
-            <option value="beyaz">Beyaz</option>
-            <option value="ekru">Ekru</option>
-            <option value="gri">Gri</option>
-            <option value="renkli">Renkli</option>
-          </select>
-        </div>
-
-        <div class="filter-group">
-          <div class="filter-group-title">Sırala</div>
-          <select id="sort-select">
-            <option value="featured">Öne çıkanlar</option>
-            <option value="price-asc">Fiyata göre (artan)</option>
-            <option value="price-desc">Fiyata göre (azalan)</option>
-          </select>
-        </div>
-      </aside>
-
-      <section>
-        <header class="section">
-          <h1>Perde Modelleri</h1>
-          <p>Salon, oturma odası, yatak odası ve çocuk odalarınız için tül, fon, stor ve zebra perde seçenekleri.</p>
-        </header>
-
-        <section id="tul" class="section">
-          <h2>Tül Perdeler</h2>
-          <div class="product-grid" data-grid="tul">
-            <!-- JS ile doldurulacak -->
-          </div>
-        </section>
-
-        <section id="fon" class="section">
-          <h2>Fon Perdeler</h2>
-          <div class="product-grid" data-grid="fon">
-          </div>
-        </section>
-
-        <section id="stor" class="section">
-          <h2>Stor & Zebra Perdeler</h2>
-          <div class="product-grid" data-grid="stor">
-          </div>
-        </section>
-      </section>
-    </div>
+      </div>
+    </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <h4>Kurumsal</h4>
-        <ul>
-          <li><a href="kurumsal.html">Hakkımızda</a></li>
-        </ul>
+  <footer class="bg-anthracite-900 text-white pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+        <div>
+          <h3 class="font-heading text-xl font-medium mb-4">Arduç Perde Çeyiz</h3>
+          <p class="text-white/80 text-sm font-light leading-relaxed">Işığı tasarla, mekâna ruh kat. Kaliteli perde, konforlu yaşam.</p>
+        </div>
+        <div>
+          <h4 class="font-medium text-sm uppercase tracking-wider text-white/90 mb-4">İletişim</h4>
+          <ul class="space-y-2 text-sm text-white/80 font-light">
+            <li>Osmangazi, Hilal Cd. 12 a, 34000 Sancaktepe/İstanbul</li>
+            <li><a href="tel:+905446593436" class="hover:text-white transition-colors">+90 544 659 34 36</a></li>
+            <li><a href="mailto:Erenarducc@gmail.com" class="hover:text-white transition-colors">Erenarducc@gmail.com</a></li>
+            <li>Hafta içi 09:00 – 19:00, Cumartesi 10:00 – 18:00</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-medium text-sm uppercase tracking-wider text-white/90 mb-4">Hızlı Linkler</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="index.html" class="text-white/80 hover:text-white transition-colors">Ana Sayfa</a></li>
+            <li><a href="perde.html" class="text-white/80 hover:text-white transition-colors">Koleksiyon</a></li>
+            <li><a href="kurumsal.html" class="text-white/80 hover:text-white transition-colors">Kurumsal</a></li>
+            <li><a href="iletisim.html" class="text-white/80 hover:text-white transition-colors">İletişim</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-medium text-sm uppercase tracking-wider text-white/90 mb-4">Bizi Takip Edin</h4>
+          <div class="flex gap-4">
+            <a href="https://wa.me/905446593436" target="_blank" rel="noopener" aria-label="WhatsApp" class="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center text-white hover:bg-sage-600 transition-colors"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+            <a href="mailto:Erenarducc@gmail.com" aria-label="E-posta" class="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center text-white hover:bg-sage-600 transition-colors"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></a>
+          </div>
+        </div>
       </div>
-      <div>
-        <h4>Müşteri Hizmetleri</h4>
-        <ul>
-          <li><a href="iletisim.html">İletişim</a></li>
-          <li><a href="iletisim.html#sss">Sık Sorulan Sorular</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Site Hakkında</h4>
-        <ul>
-          <li><a href="index.html#kampanyalar">Kampanyalar</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Popüler Kategoriler</h4>
-        <ul>
-          <li><a href="#tul">Tül Perdeler</a></li>
-          <li><a href="#fon">Fon Perdeler</a></li>
-          <li><a href="#stor">Stor & Zebra Perdeler</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <div class="container footer-bottom-inner">
-        <span>© <span id="year"></span> Arduç Perde</span>
-        <span>Her anın keyfini yakala</span>
+      <div class="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <span class="text-white/60 text-sm">© <span id="year"></span> Arduç Perde Çeyiz. Tüm hakları saklıdır.</span>
+        <span class="text-white/60 text-sm font-light">Evinizin Yeni Manzarası</span>
       </div>
     </div>
   </footer>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+    var navbar = document.getElementById('navbar');
+    function updateNavbar() { navbar.classList.toggle('scrolled', window.scrollY > 60); }
+    window.addEventListener('scroll', updateNavbar);
+    updateNavbar();
+    var menuToggle = document.getElementById('menu-toggle');
+    var mainNav = document.getElementById('main-nav');
+    if (menuToggle && mainNav) menuToggle.addEventListener('click', function() { mainNav.classList.toggle('mobile-open'); menuToggle.setAttribute('aria-label', mainNav.classList.contains('mobile-open') ? 'Menüyü kapat' : 'Menüyü aç'); });
+    var filterBtns = document.querySelectorAll('.filter-btn');
+    var productCards = document.querySelectorAll('.product-card');
+    filterBtns.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var filter = this.getAttribute('data-filter');
+        filterBtns.forEach(function(b) { b.classList.remove('bg-sage-600', 'text-white'); b.classList.add('text-anthracite-800'); });
+        this.classList.add('bg-sage-600', 'text-white'); this.classList.remove('text-anthracite-800');
+        productCards.forEach(function(card) {
+          if (filter === 'all' || card.getAttribute('data-type') === filter) card.classList.add('visible');
+          else card.classList.remove('visible');
+        });
+      });
+    });
+    document.querySelectorAll('.filter-trigger').forEach(function(tr) {
+      tr.addEventListener('click', function(e) {
+        e.preventDefault();
+        var t = this.getAttribute('data-type');
+        document.querySelector('.filter-btn[data-filter="' + t + '"]').click();
+        document.getElementById('urunler').scrollIntoView({ behavior: 'smooth' });
+      });
+    });
   </script>
 </body>
 </html>
-

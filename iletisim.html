@@ -3,180 +3,206 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>İletişim | Arduç Perde</title>
-  <link rel="stylesheet" href="assets/css/styles.css">
-  <script src="assets/js/site-icerik.js" defer></script>
+  <title>İletişim | Arduç Perde Çeyiz</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/tailwind.css">
+  <style>
+    .font-heading { font-family: 'Playfair Display', 'Lora', serif; }
+    .font-body { font-family: 'Montserrat', sans-serif; }
+    #navbar.scrolled { background: rgba(255,255,255,0.94); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+    #navbar.scrolled .nav-brand-text, #navbar.scrolled .nav-brand-tagline, #navbar.scrolled nav a { color: #1a1d28; }
+    #navbar.scrolled nav a:hover { color: #4a5c49; }
+    #navbar.scrolled .cta-btn { background: #4a5c49; color: #fff; border-color: #4a5c49; }
+    #navbar.scrolled .cta-btn:hover { background: #3d4d3c; }
+    @media (max-width: 768px) {
+      #main-nav.mobile-open { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: #fff; padding: 1rem; gap: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+      #main-nav.mobile-open a { color: #2d3142; padding: 0.75rem 1rem; border-bottom: 1px solid rgba(0,0,0,0.06); }
+    }
+    input:focus, textarea:focus, select:focus { outline: none; border-color: #4a5c49; box-shadow: 0 0 0 2px rgba(74,92,73,0.2); }
+  </style>
 </head>
-<body>
-  <header class="topbar">
-    <div class="topbar-left">
-      <a href="index.html" class="topbar-link">Sipariş Takibi</a>
-      <a href="index.html#kampanyalar" class="topbar-link">Kampanyalar</a>
-      <a href="iletisim.html" class="topbar-link">Mağazalarımız</a>
-    </div>
-    <div class="topbar-right">
-      <span class="topbar-banner">Arduç Perde · Her anın keyfini yakala</span>
-    </div>
-  </header>
-
-  <header class="main-header">
-    <div class="container header-inner">
-      <a href="index.html" class="brand">
-        <div class="brand-logo">
-          <img src="assets/img/logo.png" alt="Arduç Perde logosu">
-        </div>
-        <div class="brand-text">
-          <span class="brand-name">Arduç Perde</span>
-          <span class="brand-tagline">Her anın keyfini yakala</span>
-        </div>
-      </a>
-      <nav class="main-nav">
-        <a href="index.html" class="nav-link">Ana Sayfa</a>
-        <a href="perde.html" class="nav-link">Perde</a>
-        <a href="kurumsal.html" class="nav-link">Kurumsal</a>
-        <a href="iletisim.html" class="nav-link active">İletişim</a>
-      </nav>
+<body class="font-body text-anthracite-800 antialiased">
+  <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/75 backdrop-blur-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <a href="index.html" class="flex items-center gap-3">
+          <div class="w-12 h-12 rounded-lg border-2 border-anthracite-800 flex items-center justify-center flex-shrink-0">
+            <span class="font-heading text-anthracite-800 font-semibold text-lg tracking-tight">AD</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="nav-brand-text font-heading text-anthracite-800 text-lg font-semibold leading-tight">Arduç Perde Çeyiz</span>
+            <span class="nav-brand-tagline text-anthracite-800/70 text-xs font-light tracking-wide">Evinizin Yeni Manzarası</span>
+          </div>
+        </a>
+        <nav id="main-nav" class="hidden md:flex items-center gap-8">
+          <a href="index.html" class="text-anthracite-800/90 hover:text-anthracite-800 text-sm font-medium tracking-wide transition-colors">Ana Sayfa</a>
+          <a href="perde.html" class="text-anthracite-800/90 hover:text-anthracite-800 text-sm font-medium tracking-wide transition-colors">Koleksiyon</a>
+          <a href="kurumsal.html" class="text-anthracite-800/90 hover:text-anthracite-800 text-sm font-medium tracking-wide transition-colors">Kurumsal</a>
+          <a href="iletisim.html" class="text-anthracite-800 text-sm font-medium tracking-wide border-b-2 border-sage-600 pb-0.5">İletişim</a>
+        </nav>
+        <button id="menu-toggle" type="button" class="md:hidden w-10 h-10 flex items-center justify-center text-anthracite-800 rounded-lg hover:bg-anthracite-800/5" aria-label="Menüyü aç">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+        <a href="iletisim.html" class="cta-btn inline-flex items-center px-5 py-2.5 rounded-lg bg-sage-600 text-white text-sm font-medium border border-sage-600 hover:bg-sage-700 transition-all duration-300">Ölçü Randevusu Al</a>
+      </div>
     </div>
   </header>
 
-  <div class="breadcrumb">
-    <div class="container breadcrumb-inner">
-      <a href="index.html">Anasayfa</a>
-      <span>›</span>
-      <span>İletişim</span>
-    </div>
-  </div>
+  <main class="pt-20">
+    <section class="bg-cream-100 py-16 sm:py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="font-heading text-3xl sm:text-4xl md:text-5xl font-light text-anthracite-800 mb-3">İletişim</h1>
+        <p class="text-anthracite-800/70 font-light max-w-xl mx-auto">Ölçü randevusu, ürün bilgisi veya siparişleriniz için bize ulaşın.</p>
+      </div>
+    </section>
 
-  <main class="contact-layout">
-    <div class="container contact-inner">
-      <section class="contact-card">
-        <h1>Bize Ulaşın</h1>
-        <p>Perde modellerimiz, ölçü alma hizmeti veya siparişlerinizle ilgili her türlü sorunuz için bizimle iletişime geçebilirsiniz.</p>
-
-        <div class="contact-details">
-          <div>
-            <div class="contact-detail-label">Adres</div>
-            <div>Osmangazi, Hilal Cd. 12 a, 34000 Sancaktepe/İstanbul</div>
-          </div>
-          <div>
-            <div class="contact-detail-label">Telefon</div>
-            <div><a href="tel:+905446593436">+90 544 659 34 36</a></div>
-          </div>
-          <div>
-            <div class="contact-detail-label">WhatsApp</div>
-            <div><a href="https://wa.me/905446593436" target="_blank" rel="noopener">WhatsApp hattımıza yazın</a></div>
-          </div>
-          <div>
-            <div class="contact-detail-label">E-posta</div>
-            <div><a href="mailto:Erenarducc@gmail.com">Erenarducc@gmail.com</a></div>
-          </div>
-          <div>
-            <div class="contact-detail-label">Çalışma Saatleri</div>
-            <div>Hafta içi 09:00 – 19:00, Cumartesi 10:00 – 18:00</div>
-          </div>
-        </div>
-
-        <div class="contact-actions">
-          <a class="btn btn-primary" href="https://wa.me/905446593436" target="_blank" rel="noopener">WhatsApp ile yaz</a>
-          <a class="btn btn-outline" href="tel:+905446593436">Telefon et</a>
-        </div>
-      </section>
-
-      <section class="contact-card">
-        <h2>İletişim Formu</h2>
-        <p class="form-help">Bu form Netlify Forms ile çalışacak şekilde hazırlandı. Site Netlify’ye bağlandığında gönderimler panelden görüntülenebilir.</p>
-
-        <form name="iletisim" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-          <input type="hidden" name="form-name" value="iletisim">
-          <p style="display:none">
-            <label>Bot alanı: <input name="bot-field"></label>
-          </p>
-
-          <div class="form-row">
-            <div>
-              <label for="ad">Ad Soyad</label>
-              <input id="ad" name="ad" type="text" required>
-            </div>
-            <div>
-              <label for="telefon">Telefon</label>
-              <input id="telefon" name="telefon" type="tel" required>
+    <section class="py-12 sm:py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12">
+          <div class="bg-beige-100/80 rounded-2xl p-8 sm:p-10 border border-anthracite-800/5 shadow-sm">
+            <h2 class="font-heading text-2xl font-medium text-anthracite-800 mb-6">Bize Ulaşın</h2>
+            <p class="text-anthracite-800/80 font-light mb-6">Perde modellerimiz, ölçü alma hizmeti veya siparişlerinizle ilgili her türlü sorunuz için bizimle iletişime geçebilirsiniz.</p>
+            <ul class="space-y-4 text-sm">
+              <li>
+                <span class="font-medium text-anthracite-800 block mb-1">Adres</span>
+                <span class="text-anthracite-800/80">Osmangazi, Hilal Cd. 12 a, 34000 Sancaktepe/İstanbul</span>
+              </li>
+              <li>
+                <span class="font-medium text-anthracite-800 block mb-1">Telefon</span>
+                <a href="tel:+905446593436" class="text-anthracite-800/80 hover:text-sage-600 transition-colors">+90 544 659 34 36</a>
+              </li>
+              <li>
+                <span class="font-medium text-anthracite-800 block mb-1">E-posta</span>
+                <a href="mailto:Erenarducc@gmail.com" class="text-anthracite-800/80 hover:text-sage-600 transition-colors">Erenarducc@gmail.com</a>
+              </li>
+              <li>
+                <span class="font-medium text-anthracite-800 block mb-1">Çalışma Saatleri</span>
+                <span class="text-anthracite-800/80">Hafta içi 09:00 – 19:00, Cumartesi 10:00 – 18:00</span>
+              </li>
+            </ul>
+            <div class="mt-8 flex flex-wrap gap-3">
+              <a href="https://wa.me/905446593436" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-[#25D366] text-white font-medium hover:opacity-90 transition-opacity">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                WhatsApp ile yaz
+              </a>
+              <a href="tel:+905446593436" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-anthracite-800/20 text-anthracite-800 font-medium hover:bg-cream-100 transition-colors">Telefon et</a>
             </div>
           </div>
+          <div class="bg-white rounded-2xl p-8 sm:p-10 border border-anthracite-800/5 shadow-sm">
+            <h2 class="font-heading text-2xl font-medium text-anthracite-800 mb-2">İletişim Formu</h2>
+            <p class="text-anthracite-800/70 text-sm font-light mb-6">Mesajınızı iletin, en kısa sürede size dönüş yapalım.</p>
+            <form name="iletisim" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="space-y-4">
+              <input type="hidden" name="form-name" value="iletisim">
+              <p class="hidden"><label>Bot: <input name="bot-field"></label></p>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="ad" class="block text-sm font-medium text-anthracite-800 mb-1">Ad Soyad</label>
+                  <input id="ad" name="ad" type="text" required class="w-full px-4 py-2.5 rounded-xl border border-anthracite-800/20 bg-cream-50/50 transition-colors" />
+                </div>
+                <div>
+                  <label for="telefon" class="block text-sm font-medium text-anthracite-800 mb-1">Telefon</label>
+                  <input id="telefon" name="telefon" type="tel" required class="w-full px-4 py-2.5 rounded-xl border border-anthracite-800/20 bg-cream-50/50 transition-colors" />
+                </div>
+              </div>
+              <div>
+                <label for="email" class="block text-sm font-medium text-anthracite-800 mb-1">E-posta</label>
+                <input id="email" name="email" type="email" class="w-full px-4 py-2.5 rounded-xl border border-anthracite-800/20 bg-cream-50/50 transition-colors" />
+              </div>
+              <div>
+                <label for="konu" class="block text-sm font-medium text-anthracite-800 mb-1">Konu</label>
+                <select id="konu" name="konu" class="w-full px-4 py-2.5 rounded-xl border border-anthracite-800/20 bg-cream-50/50 transition-colors">
+                  <option value="genel">Genel bilgi talebi</option>
+                  <option value="perde-teklifi">Perde ölçü & fiyat teklifi</option>
+                  <option value="servis">Servis / montaj</option>
+                </select>
+              </div>
+              <div>
+                <label for="mesaj" class="block text-sm font-medium text-anthracite-800 mb-1">Mesajınız</label>
+                <textarea id="mesaj" name="mesaj" required rows="4" class="w-full px-4 py-2.5 rounded-xl border border-anthracite-800/20 bg-cream-50/50 transition-colors resize-y"></textarea>
+              </div>
+              <button type="submit" class="w-full sm:w-auto px-8 py-3 rounded-xl bg-sage-600 text-white font-medium hover:bg-sage-700 transition-colors">Gönder</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
 
-          <label for="email">E-posta</label>
-          <input id="email" name="email" type="email">
-
-          <label for="konu">Konu</label>
-          <select id="konu" name="konu">
-            <option value="genel">Genel bilgi talebi</option>
-            <option value="perde-teklifi">Perde ölçü & fiyat teklifi</option>
-            <option value="servis">Servis / montaj</option>
-          </select>
-
-          <label for="mesaj">Mesajınız</label>
-          <textarea id="mesaj" name="mesaj" required></textarea>
-
-          <button type="submit" class="btn btn-primary btn-full">Gönder</button>
-        </form>
-      </section>
-    </div>
-
-    <section id="sss" class="container faq-section">
-      <h2>Sık Sorulan Sorular</h2>
-      <div class="faq-grid">
-        <article class="card faq-item">
-          <h3>Ölçü alma hizmetiniz ücretli mi?</h3>
-          <p>Mağazamızın belirlediği bölgelere ücretsiz keşif ve ölçü hizmeti sunabilirsiniz. Detaylar için telefonla bilgi verilecektir.</p>
-        </article>
-        <article class="card faq-item">
-          <h3>Teslimat süreniz nedir?</h3>
-          <p>Seçilen modele ve kumaşa göre değişmekle birlikte, ortalama teslimat süresi 7–14 gün arasındadır.</p>
-        </article>
+    <section id="sss" class="py-16 sm:py-20 bg-cream-100">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="font-heading text-2xl sm:text-3xl font-light text-anthracite-800 text-center mb-12">Sık Sorulan Sorular</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+          <article class="bg-white rounded-2xl p-6 sm:p-8 border border-anthracite-800/5 shadow-sm">
+            <h3 class="font-heading text-lg font-medium text-anthracite-800 mb-3">Ölçü alma hizmetiniz ücretli mi?</h3>
+            <p class="text-anthracite-800/70 font-light text-sm leading-relaxed">Mağazamızın belirlediği bölgelere ücretsiz keşif ve ölçü hizmeti sunuyoruz. Detaylar için telefonla bilgi verilecektir.</p>
+          </article>
+          <article class="bg-white rounded-2xl p-6 sm:p-8 border border-anthracite-800/5 shadow-sm">
+            <h3 class="font-heading text-lg font-medium text-anthracite-800 mb-3">Teslimat süreniz nedir?</h3>
+            <p class="text-anthracite-800/70 font-light text-sm leading-relaxed">Seçilen modele ve kumaşa göre değişmekle birlikte, ortalama teslimat süresi 7–14 gün arasındadır.</p>
+          </article>
+          <article class="bg-white rounded-2xl p-6 sm:p-8 border border-anthracite-800/5 shadow-sm">
+            <h3 class="font-heading text-lg font-medium text-anthracite-800 mb-3">Montaj hizmeti veriyor musunuz?</h3>
+            <p class="text-anthracite-800/70 font-light text-sm leading-relaxed">Evet. Siparişiniz tamamlandığında profesyonel montaj ekibimiz ürünlerinizi yerinde monte eder.</p>
+          </article>
+          <article class="bg-white rounded-2xl p-6 sm:p-8 border border-anthracite-800/5 shadow-sm">
+            <h3 class="font-heading text-lg font-medium text-anthracite-800 mb-3">Ödeme seçenekleri nelerdir?</h3>
+            <p class="text-anthracite-800/70 font-light text-sm leading-relaxed">Nakit, kredi kartı ve havale/EFT ile ödeme alıyoruz. Taksit imkânları için lütfen bizimle iletişime geçin.</p>
+          </article>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <h4>Kurumsal</h4>
-        <ul>
-          <li><a href="kurumsal.html">Hakkımızda</a></li>
-        </ul>
+  <footer class="bg-anthracite-900 text-white pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+        <div>
+          <h3 class="font-heading text-xl font-medium mb-4">Arduç Perde Çeyiz</h3>
+          <p class="text-white/80 text-sm font-light leading-relaxed">Işığı tasarla, mekâna ruh kat. Kaliteli perde, konforlu yaşam.</p>
+        </div>
+        <div>
+          <h4 class="font-medium text-sm uppercase tracking-wider text-white/90 mb-4">İletişim</h4>
+          <ul class="space-y-2 text-sm text-white/80 font-light">
+            <li>Osmangazi, Hilal Cd. 12 a, 34000 Sancaktepe/İstanbul</li>
+            <li><a href="tel:+905446593436" class="hover:text-white transition-colors">+90 544 659 34 36</a></li>
+            <li><a href="mailto:Erenarducc@gmail.com" class="hover:text-white transition-colors">Erenarducc@gmail.com</a></li>
+            <li>Hafta içi 09:00 – 19:00, Cumartesi 10:00 – 18:00</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-medium text-sm uppercase tracking-wider text-white/90 mb-4">Hızlı Linkler</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="index.html" class="text-white/80 hover:text-white transition-colors">Ana Sayfa</a></li>
+            <li><a href="perde.html" class="text-white/80 hover:text-white transition-colors">Koleksiyon</a></li>
+            <li><a href="kurumsal.html" class="text-white/80 hover:text-white transition-colors">Kurumsal</a></li>
+            <li><a href="iletisim.html" class="text-white/80 hover:text-white transition-colors">İletişim</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-medium text-sm uppercase tracking-wider text-white/90 mb-4">Bizi Takip Edin</h4>
+          <div class="flex gap-4">
+            <a href="https://wa.me/905446593436" target="_blank" rel="noopener" aria-label="WhatsApp" class="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center text-white hover:bg-sage-600 transition-colors"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+            <a href="mailto:Erenarducc@gmail.com" aria-label="E-posta" class="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center text-white hover:bg-sage-600 transition-colors"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></a>
+          </div>
+        </div>
       </div>
-      <div>
-        <h4>Müşteri Hizmetleri</h4>
-        <ul>
-          <li><a href="iletisim.html">İletişim</a></li>
-          <li><a href="#sss">Sık Sorulan Sorular</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Site Hakkında</h4>
-        <ul>
-          <li><a href="index.html#kampanyalar">Kampanyalar</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Popüler Kategoriler</h4>
-        <ul>
-          <li><a href="perde.html#tul">Tül Perdeler</a></li>
-          <li><a href="perde.html#fon">Fon Perdeler</a></li>
-          <li><a href="perde.html#stor">Stor & Zebra Perdeler</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <div class="container footer-bottom-inner">
-        <span>© <span id="year"></span> Arduç Perde</span>
-        <span>Her anın keyfini yakala</span>
+      <div class="mt-12 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <span class="text-white/60 text-sm">© <span id="year"></span> Arduç Perde Çeyiz. Tüm hakları saklıdır.</span>
+        <span class="text-white/60 text-sm font-light">Evinizin Yeni Manzarası</span>
       </div>
     </div>
   </footer>
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+    var navbar = document.getElementById('navbar');
+    function updateNavbar() { navbar.classList.toggle('scrolled', window.scrollY > 60); }
+    window.addEventListener('scroll', updateNavbar);
+    updateNavbar();
+    var menuToggle = document.getElementById('menu-toggle');
+    var mainNav = document.getElementById('main-nav');
+    if (menuToggle && mainNav) menuToggle.addEventListener('click', function() { mainNav.classList.toggle('mobile-open'); menuToggle.setAttribute('aria-label', mainNav.classList.contains('mobile-open') ? 'Menüyü kapat' : 'Menüyü aç'); });
   </script>
 </body>
 </html>
-
