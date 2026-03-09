@@ -1,13 +1,9 @@
 # Arduç Perde - Netlify ayarları
-# Git ile yayınlarsanız bu ayarlar otomatik kullanılır.
+# CSS yerelde derlenir (npm run build), Netlify sadece statik dosyaları yayınlar.
 
 [build]
   publish = "."
-  command = "npm install && npm run build"
-
-[build.environment]
-  NODE_VERSION = "18"
-  NPM_FLAGS = "--legacy-peer-deps"
+  command = ""
 
 # İsteğe bağlı: 404 sayfası
 # [[redirects]]
